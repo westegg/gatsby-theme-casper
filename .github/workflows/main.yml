@@ -11,10 +11,8 @@ jobs:
     - uses: actions/checkout@v1
     - run: |
         yarn install
-        cd theme
         yarn build
-        cd ..
-    - run: cd demo
+        cp -r ./demo/public ./public
     - uses: enriikke/gatsby-gh-pages-action@2.1.1
       with:
           access-token: ${{ secrets.ACCESS_TOKEN }}
