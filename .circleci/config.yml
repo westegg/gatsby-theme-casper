@@ -1,0 +1,14 @@
+version: 2
+jobs:
+  build:
+    working_directory: ~/westegg
+    docker:
+      - image: circleci/node:10.15
+    steps:
+      - checkout
+      - run:
+          name: Installing...
+          command: yarn install
+      - run:
+          name: Building...
+          command: yarn build
